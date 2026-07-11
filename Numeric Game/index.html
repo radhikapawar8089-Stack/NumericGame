@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brain Boost Kids</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand">
+        <h1>Brain Boost Kids</h1>
+        <p>Fun number games for young learners</p>
+      </div>
+      <div class="controls">
+        <button id="soundToggle" class="icon-btn" aria-label="Toggle sound">🔊</button>
+        <button id="hintButton" class="icon-btn" aria-label="Show hint">💡</button>
+        <button id="restartButton" class="icon-btn" aria-label="Restart game">⟲</button>
+        <button id="homeButton" class="icon-btn" aria-label="Back to home">🏠</button>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <section id="homeScreen" class="screen active">
+        <div class="hero-card">
+          <div class="hero-badge">Play & Learn</div>
+          <h2>Welcome to Brain Boost Kids!</h2>
+          <p>Choose a game and challenge your brain with bright cards, fun puzzles, and friendly rewards.</p>
+          <div class="home-grid">
+            <a href="#" class="big-card" id="startNumbers">
+              <div class="card-icon">123</div>
+              <h3>Missing Numbers</h3>
+              <p>Fill in the blanks and beat the round.</p>
+            </a>
+            <a href="missing-shapes/index.html" class="big-card">
+              <div class="card-icon">🔷</div>
+              <h3>Missing Shapes</h3>
+              <p>Spot the shape, complete the pattern, and win stars.</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="selectionScreen" class="screen">
+        <div class="panel">
+          <div class="panel-header">
+            <div>
+              <span class="pill">Missing Numbers</span>
+              <h2>Pick a puzzle</h2>
+            </div>
+          </div>
+          <div class="mode-grid">
+            <button class="mode-btn" data-mode="missing_1_20">Missing number 1–20</button>
+            <button class="mode-btn" data-mode="missing_1_50">Missing number 1–50</button>
+            <button class="mode-btn" data-mode="missing_1_100">Missing number 1–100</button>
+            <button class="mode-btn" data-mode="greater_than">Greater than</button>
+            <button class="mode-btn" data-mode="less_than">Less than</button>
+            <button class="mode-btn" data-mode="between_numbers">Between</button>
+          </div>
+          <div class="difficulty-row">
+            <span>Choose difficulty:</span>
+            <div class="difficulty-buttons">
+              <button class="difficulty-btn active" data-difficulty="easy">Easy</button>
+              <button class="difficulty-btn" data-difficulty="medium">Medium</button>
+              <button class="difficulty-btn" data-difficulty="hard">Hard</button>
+            </div>
+          </div>
+          <div class="round-start">
+            <button id="startGameButton" class="primary-btn">Start Round</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="gameScreen" class="screen">
+        <div class="game-top">
+          <div class="stats-card">
+            <div class="stat-block">
+              <span>Level</span>
+              <strong id="levelLabel">1</strong>
+            </div>
+            <div class="stat-block">
+              <span>Score</span>
+              <strong id="scoreLabel">0</strong>
+            </div>
+            <div class="stat-block stars-block">
+              <span>Stars</span>
+              <div id="starDisplay" class="stars"></div>
+            </div>
+          </div>
+          <div class="progress-wrap">
+            <span id="questionTracker">Question 1 / 10</span>
+            <div class="progress-bar"><div id="progressFill"></div></div>
+          </div>
+        </div>
+
+        <div class="question-panel">
+          <div class="question-card">
+            <div class="question-label" id="questionPrompt">Loading question...</div>
+            <div class="question-detail" id="questionDetail"></div>
+          </div>
+          <div id="optionsGrid" class="options-grid"></div>
+          <div class="hint-panel hidden" id="hintPanel"><strong>Hint:</strong> <span id="hintText"></span></div>
+        </div>
+      </section>
+
+      <section id="resultScreen" class="screen">
+        <div class="celebration-card">
+          <div class="celebration-badge" id="celebrationBadge">Great Job!</div>
+          <h2>Your round is complete!</h2>
+          <p id="resultMessage">Amazing work, keep going!</p>
+          <div class="result-score">
+            <div><strong id="finalScore">0</strong> points</div>
+            <div class="stars" id="finalStars"></div>
+          </div>
+          <div class="result-actions">
+            <button id="playAgainButton" class="secondary-btn">Play Again</button>
+            <button id="goHomeButton" class="primary-btn">Back to Home</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="confettiLayer" class="confetti-layer" aria-hidden="true"></div>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
