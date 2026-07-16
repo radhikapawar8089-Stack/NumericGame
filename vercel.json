@@ -1,9 +1,8 @@
 {
-  "redirects": [
+  "rewrites": [
     {
       "source": "/missing-shapes",
-      "destination": "/missing-shapes/index.html",
-      "permanent": false
+      "destination": "/missing-shapes.html"
     }
   ]
 }
