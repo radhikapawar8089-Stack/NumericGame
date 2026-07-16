@@ -156,6 +156,14 @@ const difficultyButtons = document.querySelectorAll('.difficulty-btn');
 const modeButtons = document.querySelectorAll('.mode-btn');
 
 function init() {
+  const onShapesPage = !!document.getElementById('shapeHome');
+  if (onShapesPage) {
+    if (window.location.pathname === '/missing-shapes') {
+      window.location.replace('/missing-shapes/index.html');
+    }
+    return;
+  }
+
   elements.homeButton.addEventListener('click', () => showSection('home'));
   elements.startNumbers.addEventListener('click', (event) => {
     event.preventDefault();

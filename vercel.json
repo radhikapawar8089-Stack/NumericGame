@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/missing-shapes",
+      "destination": "/missing-shapes/index.html",
+      "permanent": false
+    }
+  ]
+}
